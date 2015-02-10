@@ -14,12 +14,6 @@ shift
 CMD=$*
 KERB_KEYTAB=$RD_CONFIG_KERBEROS_KEYTAB
 
-# Verbose arguments
-echo "Openssh Kerberos wrapper, parameters were"
-echo USER = $USER
-echo HOST = $HOST
-echo CMD = $CMD
-
 if [ ! -f $KERB_KEYTAB ]; then
   >&2 echo Keytab $KERB_KEYTAB not found
   exit 2
