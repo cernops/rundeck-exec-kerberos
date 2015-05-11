@@ -23,6 +23,12 @@ providers:
           type: String
           required: true
           description: "The path and filename to the Kerberos key table used to authenticate the user (e.g. /tmp/user.ktab)"
+        - name: do_kdestroy
+          title: Destroy kerberos ticket
+          type: Boolean
+          required: true
+          description: "If selected, the kerberos ticket will be destroyed at the end of the execution"
+
     - name: scp-krb
       service: FileCopier
       title: SCP Kerberos Executor
@@ -42,3 +48,8 @@ providers:
           type: String
           required: true
           description: "The path and filename to the Kerberos key table used to authenticate the user (e.g. /tmp/user.ktab)"
+        - name: do_kdestroy
+          title: Destroy kerberos ticket
+          type: Boolean
+          required: true
+          description: "If selected, the kerberos ticket will be destroyed at the end of the execution"
