@@ -30,4 +30,6 @@ RUNSSH="ssh $SSHOPTS $USER@$HOST $CMD"
 
 exec $RUNSSH
 
-kdestroy
+if [[ ${RD_CONFIG_DO_KDESTROY} == 'true' ]]; then
+  kdestroy
+fi

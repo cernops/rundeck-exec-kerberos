@@ -33,4 +33,6 @@ RUNSSH="scp $SSHOPTS $SRC_FILE $USER@$HOST:$DEST_FILE"
 $RUNSSH 1>&2 || exit $? # exit if not successful
 echo $DEST_FILE # echo remote filepath
 
-kdestroy
+if [[ ${RD_CONFIG_DO_KDESTROY} == 'true' ]]; then
+  kdestroy
+fi
