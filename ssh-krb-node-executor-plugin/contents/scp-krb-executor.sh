@@ -20,10 +20,20 @@ if [ ! -f $KERB_KEYTAB ]; then
   exit 2
 fi
 
-kinit -kt $KERB_KEYTAB $RD_CONFIG_KERBEROS_USER
+# random delay (0..0.5s) to make it work with parallel exec
+sleep $(bc <<< "scale=2; $(printf '0.%02d' $(( $RANDOM % 100))) / 2")
+
+# status 1 if the credentials cache cannot be read or is expired, and with status 0 otherwise
+klist -s
 if [ $? -ne 0 ]; then
-  >&2 echo Kinit failure when calling kinit -kt $KERB_KEYTAB $RD_CONFIG_KERBEROS_USER
-  exit 2
+  kinit -kt $KERB_KEYTAB $RD_CONFIG_KERBEROS_USER
+
+  # verify ticket has been successfuly created
+  klist -s
+  if [ $? -ne 0 ]; then
+    >&2 echo Kinit failure when calling kinit -kt $KERB_KEYTAB $RD_CONFIG_KERBEROS_USER
+    exit 2
+  fi
 fi
 
 SSHOPTS=" -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet"
