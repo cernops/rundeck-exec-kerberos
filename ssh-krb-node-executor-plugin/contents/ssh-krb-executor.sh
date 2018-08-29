@@ -37,7 +37,7 @@ fi
 SSHOPTS=" -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet -o GSSAPIDelegateCredentials=yes"
 RUNSSH="ssh $SSHOPTS $USER@$HOST $CMD"
 
-"$RUNSSH"
+$RUNSSH || exit $? # exit if not successful
 
 if [[ ${RD_CONFIG_DO_KDESTROY} == 'true' ]]; then
   kdestroy
