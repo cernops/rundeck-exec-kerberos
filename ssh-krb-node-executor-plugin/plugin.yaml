@@ -1,8 +1,8 @@
 name: ssh-krb-node-executor
 rundeckPluginVersion: 1.0
 author: Akos Hencz, Daniel Fernández, Philippe Ganz
-date: 27/08/2018
-version: 1.4
+date: 29/08/2018
+version: 1.4.1
 providers:
     - name: ssh-krb
       service: NodeExecutor
