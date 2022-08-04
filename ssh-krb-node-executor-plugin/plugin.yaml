@@ -23,6 +23,16 @@ providers:
           type: String
           required: true
           description: "The path and filename to the Kerberos key table used to authenticate the user (e.g. /tmp/user.ktab)"
+        - name: use_kerberos_custom_cache_file
+          title: Use a dedicated cache file
+          type: Boolean
+          required: false
+          description: "If selected, the Kerberos credentials cache file will be stored in a dedicated location. Recommended when multiple Kerberos principals are in use in this Rundeck instance because initiating another principal will override the current principal present in the default cache file, if any."
+        - name: kerberos_custom_cache_filename
+          title: Kerberos cache filename
+          type: String
+          required: false
+          description: "Define a custom location for the dedicated Kerberos credentials cache file, otherwise it will use the pattern /tmp/krb5cc_<UID>_rundeck_<KERBEROS_USER>"
         - name: do_kdestroy
           title: Destroy kerberos ticket
           type: Boolean
@@ -48,6 +58,16 @@ providers:
           type: String
           required: true
           description: "The path and filename to the Kerberos key table used to authenticate the user (e.g. /tmp/user.ktab)"
+        - name: use_kerberos_custom_cache_file
+          title: Use a dedicated cache file
+          type: Boolean
+          required: false
+          description: "If selected, the Kerberos credentials cache file will be stored in a dedicated location. Recommended when multiple Kerberos principals are in use in this Rundeck instance because initiating another principal will override the current principal present in the default cache file, if any."
+        - name: kerberos_custom_cache_filename
+          title: Kerberos cache filename
+          type: String
+          required: false
+          description: "Define a custom location for the dedicated Kerberos credentials cache file, otherwise it will use the pattern /tmp/krb5cc_<UID>_rundeck_<KERBEROS_USER>"
         - name: do_kdestroy
           title: Destroy kerberos ticket
           type: Boolean

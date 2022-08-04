@@ -18,6 +18,12 @@ using the keytab
 
 `Kerberos keytab` - The path to the keytab file used to authenticate the principal
 
+`Use a dedicated cache file` - Useful when multiple Kerberos principals are in use.
+
+`Kerberos cache filename` - Specify manually the cache filename.
+
+`Destroy Kerberos ticket` - Perform a kdestroy before exiting the plugin, not recommended.
+
 Requirements
 ------------
 The plugin requires Rundeck version 2.4.0 or higher.
