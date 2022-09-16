@@ -2,6 +2,7 @@ name: ssh-krb-node-executor
 rundeckPluginVersion: 1.0
 author: Akos Hencz, Daniel Fernández, Philippe Ganz
 date: 2018-08-29
+url: https://github.com/cernops/rundeck-exec-kerberos
 version: 1.4.1
 providers:
     - name: ssh-krb
