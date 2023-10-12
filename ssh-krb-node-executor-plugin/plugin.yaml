@@ -37,7 +37,7 @@ providers:
         - name: do_kdestroy
           title: Destroy kerberos ticket
           type: Boolean
-          required: true
+          required: false
           description: "If selected, the kerberos ticket will be destroyed at the end of the execution"
 
     - name: scp-krb
@@ -72,5 +72,5 @@ providers:
         - name: do_kdestroy
           title: Destroy kerberos ticket
           type: Boolean
-          required: true
+          required: false
           description: "If selected, the kerberos ticket will be destroyed at the end of the execution"
