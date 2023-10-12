@@ -27,7 +27,7 @@ if [ "$RD_CONFIG_USE_KERBEROS_CUSTOM_CACHE_FILE" = 'true' ]; then
   if [ -n "$RD_CONFIG_KERBEROS_CUSTOM_CACHE_FILENAME" ]; then
     export KRB5CCNAME="$RD_CONFIG_KERBEROS_CUSTOM_CACHE_FILENAME"
   elif [[ ${RD_CONFIG_DO_KDESTROY} == 'true' ]]; then
-    export KRB5CCNAME=$(mktemp "/tmp/krb5cc_XXXXXX_rundeck_$RD_CONFIG_KERBEROS_USER"
+    export KRB5CCNAME=$(mktemp "/tmp/krb5cc_XXXXXX_rundeck_$RD_CONFIG_KERBEROS_USER")
   else
     export KRB5CCNAME="/tmp/krb5cc_$(id -ru)_rundeck_$RD_CONFIG_KERBEROS_USER"
   fi
