@@ -3,7 +3,7 @@ rundeckPluginVersion: 1.0
 author: Akos Hencz, Daniel Fernández, Philippe Ganz
 date: 2018-08-29
 url: https://github.com/cernops/rundeck-exec-kerberos
-version: 1.5.0
+version: 1.5.1
 providers:
     - name: ssh-krb
       service: NodeExecutor
