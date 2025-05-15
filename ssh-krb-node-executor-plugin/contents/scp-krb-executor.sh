@@ -20,7 +20,7 @@ if [ ! -f "$RD_CONFIG_KERBEROS_KEYTAB" ]; then
 fi
 
 # random delay (0..0.5s) to make it work with parallel exec
-sleep "$(bc <<< "scale=2; $(printf '0.%02d' $(( RANDOM % 100))) / 2")"
+sleep $(perl -e 'print rand(0.5)')
 
 # override the default kerberos cache file if required
 if [ "$RD_CONFIG_USE_KERBEROS_CUSTOM_CACHE_FILE" = 'true' ]; then
